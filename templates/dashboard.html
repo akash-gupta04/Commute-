@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}dashboard{% endblock %}
+
+{% block content%}
+<link rel="stylesheet" href="/css/dashboard.css">
+
+<center>
+    <h3>Dashboard</h3>
+    <div class="elements">
+        <ul>
+            <li>
+                Carbon Perks: {{ carbon_perks }} 
+            </li>
+            <a href="#redeem">Redeem here</a>
+            <br>
+            <li>
+                Miles Travelled: {{ result }} miles
+            </li>
+            <br>
+            <li>
+               PrestoBalance: {{ PrestoBalance }} CAD
+            </li>
+            <br>
+        </ul>
+    </div>
+    <h1>Distance Calculator</h1>
+    <form id="distanceForm">
+        <label for="start">Start Location:</label>
+        <input type="text" id="start" name="start" required><br><br>
+        
+        <label for="end">End Location:</label>
+        <input type="text" id="end" name="end" required><br><br>
+        
+        <label for="mode">Mode of Transport:</label>
+        <select id="mode" name="mode">
+            <option value="transit">Transit</option>
+            <option value="bicycle">Bicycle</option>
+            <option value="walking">Walking</option>
+        </select><br><br>
+        
+        <button type="submit">Calculate Distance</button>
+    </form>
+
+    <h2>Distance:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('distanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = new URLSearchParams(formData);
+
+            fetch('/calculate', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 'Distance: ' + data.distance;
+            })
+            .catch(error => {
+                document.getElementById('result').textContent = 'Error calculating distance.';
+            });
+        });
+    </script>
+
+</center>
+{% endblock %}
