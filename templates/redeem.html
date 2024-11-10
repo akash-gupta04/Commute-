@@ -2,8 +2,23 @@
 {% block title %}Redeem{% endblock %}
 
 {% block content%}
+<h1>Redeem Your Perks</h1>
+    <p>You have {{ perks }} perks available.</p>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
 
-<h3>{{perks}}</h3>
-
-
+    <h3>Available Offers:</h3>
+    <form method="POST">
+        {% for offer, cost in offers.items() %}
+            <div style="margin-bottom: 10px;">
+                <span>{{ offer }} - {{ cost }} perks</span>
+                <button type="submit" name="offer" value="{{ offer }}">Redeem</button>
+            </div>
+        {% endfor %}
+    </form>
+    
+    <h3>Random Offer Just for You:</h3>
+    <p>{{ random_offer[0] }} - {{ random_offer[1] }} perks</p>
 {% endblock %}
