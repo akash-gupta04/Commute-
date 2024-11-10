@@ -14,7 +14,7 @@
             <a href="#redeem">Redeem here</a>
             <br>
             <li>
-                Miles Travelled: {{ result }} miles
+                Distance Travelled: {{ distance }}kms
             </li>
             <br>
             <li>
@@ -24,7 +24,7 @@
         </ul>
     </div>
     <h1>Distance Calculator</h1>
-    <form id="distanceForm">
+    <form action="{{ url_for('dashboard')}}">
         <label for="start">Start Location:</label>
         <input type="text" id="start" name="start" required><br><br>
         
@@ -40,30 +40,8 @@
         
         <button type="submit">Calculate Distance</button>
     </form>
-
-    <h2>Distance:</h2>
-    <p id="result"></p>
-
-    <script>
-        document.getElementById('distanceForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = new URLSearchParams(formData);
-
-            fetch('/calculate', {
-                method: 'POST',
-                body: data
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').textContent = 'Distance: ' + data.distance;
-            })
-            .catch(error => {
-                document.getElementById('result').textContent = 'Error calculating distance.';
-            });
-        });
-    </script>
+    <h3>Distance </h3> {{ distance }}
+    <h3>Travel Time</h3> {{ time }}
 
 </center>
 {% endblock %}
