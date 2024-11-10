@@ -6,4 +6,61 @@
         background-color: #003E29;
         display: flex;
         justify-content: center;
-        align-items: cent
+        align-items: center;
+        height: 100vh !important;
+        margin: -10px;  
+    }
+    .container {
+        width: 80%;
+        height: 80%;
+        padding: 2%;
+        background-color: #FAF6ED;
+        border-radius: 25px;
+        position: relative;
+    }
+
+    .container h1 {
+        font-size: 32px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        line-height: 2.5rem;
+
+    }
+
+    .container h1 span {
+        font-weight: 700;
+        margin-left: 36px;
+        font-size: 40px;
+        color: #5CB25D;
+  
+    }
+
+    .container p {
+        font-size: 14px;
+        font-family: "Roboto", serif;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    #hero-image img{
+        margin-top: 20px;
+        width: 106%;
+        margin-left: -9px;
+        height: 420px;
+    }
+
+    #start-btn {
+        font-family: "roboto", sans-serif;
+        background-color: #003E29 !important;
+        color: #FAF6ED;
+        position: absolute;
+        bottom: 60px;
+        width: 150px;
+        right: 40px;
+        border: 2px solid #FAF6ED;
+        border-radius: 25px;
+        padding: 0.75rem;
+        font-style: bold;
+
+    }
+}
