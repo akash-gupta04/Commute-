@@ -1,4 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
 
-.elements ul li{
-    list-style: none;
+@media (max-width: 480px) {
+    .main-div {
+        background-color: #FAF6ED;
+        height: 100vh !important;
+        margin: -10px;
+        padding: 20px;
+    }
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px 20px;
+    background-color: #003E29;
+    color: #FAF6ED;
+    margin: -20px;
+
+}
+#main-heading {
+    color: #003E29;
+    margin-top: 50px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.perks-container {
+    margin-top: 12px;
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #FAF6ED;
+font-size: 12px;
+font-family: "Roboto", sans-serif;
+}
+.perks-container > a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    width: 110px !important;
+    background-color: #003E29;
+    height: 110px;
+    border-radius: 12px;
+    border: 1px solid #FAF6ED;
+    color: #FAF6ED;
+    text-decoration: none;
+}
+.perks-value {
+    font-weight: 600 !important;
+    font-family: "Poppins", sans-serif;
+    line-height: 25px;
+ 
+}
+.map-heading  {
+    border-bottom: 2px solid #003E29;
+    margin-bottom: 20px;
+    }
+    .map-heading > h4{
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #003E29;
+        line-height: 2px;
+    }
+/* */
+.map-container {
+    width: 250px;
+    margin: auto auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #003E29;
+    border-radius: 12px;
+    padding: 12px 5px;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 12px;
+}
+.map-form {
+    color: #003E29;
+}
+#calc-dist-btn{
+    background-color: #003E29;
+    color: #FAF6ED;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    margin-top: -10px;
+    
+}
+
+.carbon-perks-show-div{
+    background-color: #5cb25dda;
+    width: 160px;
+    height: 40px;
+    color: #FAF6ED;
+    position: absolute;
+bottom: 10px;
+left: 10px;
+border-radius: 10px;
+text-align: center;
+padding: 4px 10px !important;
+
+}
+
+.explore-btn {
+    font-family: "roboto", sans-serif;
+    background-color: #003E29 !important;
+    color: #FAF6ED;
+    width: 150px;
+    border: 2px solid #FAF6ED;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-style: bold;
+    margin-top: 20px;
+    float: right;
+    font-weight: 700;
+    font-size: 12px;
+}
+.explore-perks{
+    border-bottom: 2px solid #003E29;
+ margin: 100px 0px 10px 0px;
+
+}
+.explore-perks > h4{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #003E29;
+    line-height: 2px; }
 }

@@ -3,26 +3,112 @@
 
 
 {% block content%}
-
-    <h2>Sign Up</h2>
-    <form method="POST" action="{{ url_for('register') }}">
-        {{ form.hidden_tag() }}
-        <div>
-            <label for="username">Username:</label>
+    <!---Registration Page-->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #002d13;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        .signup-container {
+            width: 320px;
+            padding: 40px;
+            margin: 20px;
+            background-color: #004d26;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #d4f8e8;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #1b6e45;
+            color: #ffffff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #b8e994;
+            color: #002d13;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #a3d989;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .login-link a {
+            color: #b8e994;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Carbon Perks</h2>
+        <div class="subtitle">Start Your Journey to Carbon-Free Rewards and Secure Rides</div>
+        <form method="POST" action="{{ url_for('register') }}">
+            {{ form.hidden_tag() }}
+            <label for="username">Username</label>
+            <!-- <input type="text" id="username" name="username" required> -->
             {{ form.username() }}
-        </div>
-        <br>
-        <div>
-            <label for="password">Password:</label>
+
+            <label for="password">Password</label>
+            <!-- <input type="password" id="password" name="password" required> -->
             {{ form.password() }}
-        </div>
-        <br>
-        <div>
-            <label for="confirm_password">Confirm Password:</label>
+
+            <label for="confirm-password">Confirm Password</label>
+            <!-- <input type="password" id="confirm-password" name="confirm-password" required> -->
             {{ form.confirm_password() }}
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login-link">
+           
+           
+            Already loged up? <a href="{{ url_for('login') }}">Login</a>
         </div>
-        <br>
-        <button type="submit">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>
+
+    <!---Page End-->
 {% endblock %}
