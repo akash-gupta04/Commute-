@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content%}
+<link rel="stylesheet" href="CSS/index.css">
+<div id="main-container">
+    <div class="container"> <h1>Welcome to <span>Carbon Perks</span></h1>
+        <p>Track your transit, reduce your carbon footprint, earn rewards for walking, cycling and taking public transit.
+        </p>
+        <div id="hero-image">
+            <img src="Images/heroImage.jpeg" alt="Just a public transit image">
+        </div>
 
-<H1>Hello</H1>
+    </div>
+    <button id="start-btn" onclick="window.location.href='/login'">Let's Start</button>
+
+   
+</div> 
 
 {% endblock %}

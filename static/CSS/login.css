@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
+
+@media (max-width: 480px){
+
+
+.main-div{
+    background-color: #003E29;
+    height: 100vh;
+margin: -12px;
+}
+#navbar{
+    background-color: #FAF6ED;
+    color: #003E29;
+    margin: -20px;
+    padding: 8px;
+text-align: center;
+
+}
+
+
+.login-description {
+    margin: 0px;
+}
+.login-description h2 {
+    color: #FAF6ED;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400 !important;
+    margin-top: 150px;
+    font-size:24px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-description p{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800 !important;
+    color: #FAF6ED;
+    margin-top: 90px !important;
+}
+
+.input-field{
+    text-decoration: none;
+    background-color: #467061;
+    color: #FAF6ED;
+    border-radius: 12px;
+border: 0.5px solid #FAF6ED;
+padding: 4px;
+}
+
+.login-form {
+    text-align: center;
+    margin-top: 20px;
+
+
+}
+.input-field:focus{
+    text-decoration: none;
+    outline: none;
+}
+.form-group {
+    color: #FAF6ED;
+    margin: 10px;
+}
+.login-btn{
+    font-family: "roboto", sans-serif;
+    background-color: #003E29 !important;
+    color: #FAF6ED;
+    width: 100px;
+    right: 40px;
+    border: 2px solid #FAF6ED;
+    border-radius: 25px;
+    padding: 0.25rem;
+    font-style: bold;
+    margin-top: 20px;
+}
+}
