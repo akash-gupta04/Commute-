@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content%}
+
+
+<link rel="stylesheet" href="css/redeem_success.css">
+<div class="main-div">
+
+    <h1 style="text-align: center;">Success</h1>
+    <p style="color: #5CB25D;">Congratulations! You’ve successfully redeemed your perks for a discount.</p>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <h3>Available Offers:</h3>
+    
+    
+    <h3>Random Offer Just for You:</h3>
+    <p>{{ random_offer[0] }} - {{ random_offer[1] }} perks</p>
+</div>
+
+
+{% endblock %}

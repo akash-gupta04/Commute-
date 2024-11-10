@@ -2,23 +2,93 @@
 {% block title %}Redeem{% endblock %}
 
 {% block content%}
-<h1>Redeem Your Perks</h1>
-    <p>You have {{ perks }} perks available.</p>
+<link rel="stylesheet" href="css/redeem.css">
+
+<div class="main-div">
+    <!--main navbar-->
+    <nav id="navbar">
+        <div>Home</div>
+        <div> <p style="font-size: 24px;">Commute+ </p></div>
+        <div>Profile</div>
+    </nav>
     
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
+    <!---heading -->
+    <h2 id="main-heading"> <span style="color:#5CB25D">Taran's</span> Commute+ Rewards</h2>
+   
+    <div class="map-heading">
+        <h4>Perks by <span style="color: #5CB25D;">Mode</span></h4>
+    </div>
+   
+    <!---perks by mode-->
+    <div class="perks-container">
+        <a href="#"><div class="perk-container">Total rewards by    <br>walk  <span class="perks-value"> {{ walking_perks }}🌿</span></div></a> 
+        <a href="#"><div class="perk-container">Total rewards ride in cycle   <span class="perks-value"> {{ bike_perks }}🌿</span></div></a> 
+    <a href="#">  <div class="perk-container">Total rewards travel by Bus  <span class="perks-value"> {{ transit_perks}}🌿</span></div> </a> 
+      </div>
+
+      <!---Retain your perks-->
+      <div class="map-heading">
+        <h4> <span style="color: #5CB25D;">Redeem</span> Your Commute+ Rewards</h4>
+    </div>
+
+    <p><em>You have {{ perks }} Commute+ Rewards available.</em></p>
+      <!--redeem cards-->
+    <div class="redeem-cards-container">
+
+        <div class="container">
+           
+            <!-- <div class="content-container">
+              <form method="POST">
+              <h2> {% for offer, cost in offers.items() %}</h2>
+              <div class="image-container">
+                <img src="Images/heroImage.jpeg" alt="Bike Accessories">
+              </div> <p>Gear up for the Green travel! Use 400 Perks for 15% off accessories at Brampton Cycle Hub.</p>
+              <span>{{ offer }} - {{ cost }} perks</span>
+              <button class="redeem-btn" onclick="window.location.href='/redeem_success'" name="offer" value="{{ offer }}">Redeem</button>
+              {% endfor %}
+            </form>
+            </div> -->
+            <!--just try-->
+
+            <!--end-->
+          </div>
+          <!-- <div class="container">
+            <div class="image-container">
+              <img src="Images/heroImage.jpeg" alt="Bike Accessories">
+            </div>
+            <div class="content-container">
+              <h2>15% off Bike Accessories</h2>
+              <p>Gear up for the Green travel! Use 400 Perks for 15% off accessories at Brampton Cycle Hub.</p>
+              <button class="redeem-btn">Redeem</button>
+            </div>
+          </div> -->
+          <!--start-->
+          <div class="container" style="margin-top: 30px; display: flex;">
+             <div class="content-container" style="margin-top: 30px;">
+              <form method="POST" style="margin-top: 60px;">
+                <h2>{% for offer, cost in offers.items() %}</h2>
+                <span>{{ offer }} - {{ cost }} perks</span>
+                <button class="redeem-btn" onclick="window.location.href='/redeem_success'" name="offer" value="{{ offer }}">Redeem</button> <br> <br>
+                {% endfor %}
+              </form>
+            </div>
+          </div>
+          <!--end-->
+  
+      
+        
+    </div>
+</div>
+<!-- <h1>Redeem Your Perks</h1>
+
+    
+    
 
     <h3>Available Offers:</h3>
-    <form method="POST">
-        {% for offer, cost in offers.items() %}
-            <div style="margin-bottom: 10px;">
-                <span>{{ offer }} - {{ cost }} perks</span>
-                <button type="submit" name="offer" value="{{ offer }}">Redeem</button>
-            </div>
-        {% endfor %}
-    </form>
+    
     
     <h3>Random Offer Just for You:</h3>
-    <p>{{ random_offer[0] }} - {{ random_offer[1] }} perks</p>
+    <p>{{ random_offer[0] }} - {{ random_offer[1] }} perks</p> -->
+ 
+  
 {% endblock %}

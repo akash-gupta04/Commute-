@@ -5,7 +5,7 @@
 <div class="main-div">
     <nav id="navbar">
         <div>Home</div>
-        <div> <p style="font-size: 24px;">Carbon Perks</p></div>
+        <div> <p style="font-size: 24px;">Commute+ </p></div>
         <div>Profile</div>
     </nav>
     
@@ -20,7 +20,7 @@
 
         <!--Each Perk Display Card-->
         <div class="perks-container">
-          <a href="#"><div class="perk-container">Total Carbon Perks <span class="perks-value">{{ carbon_perks }}🌿</span></div></a> 
+          <a href="#"><div class="perk-container">Total Commute+ Rewards <span class="perks-value">{{ total_perks }}🌿</span></div></a> 
           <a href="#"><div class="perk-container">Total Miles Travelled  <span class="perks-value"> {{ distance }}🌿</span></div></a> 
       <a href="#">  <div class="perk-container">Total Presto Balance <span class="perks-value">{{ PrestoBalance }}🌿</span></div> </a> 
         </div>
@@ -55,12 +55,12 @@
                 <label for="end">End Location:</label>
                 <input type="text" id="end" name="end" required><br><br>
                 
-                <!-- <label for="mode">Mode of Transport:</label>
+                <label for="mode">Mode of Transport:</label>
                 <select id="mode" name="mode">
                     <option value="transit">Transit</option>
                     <option value="bicycle">Bicycle</option>
                     <option value="walking">Walking</option>
-                </select><br><br> -->
+                </select><br><br>
                 
                 <button type="submit" id="calc-dist-btn">Calculate Distance</button>
             </form>
@@ -75,7 +75,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.624565114531!2d-79.74131002313469!3d43.65597887110192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3fbfe8f0ad5b%3A0xcd97e708c1197e9e!2sSheridan%20College%20-%20Davis%20Campus!5e0!3m2!1sen!2sca!4v1731223919939!5m2!1sen!2sca" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-frame"></iframe>
 
 <button class="explore-btn">Explore Options</button>
-<div class="carbon-perks-show-div">{{ carbon_perks }} Carbon🌿</div>
+<div class="carbon-perks-show-div">{{ carbon_perks }} Commute+ 🌿</div>
 
 <div class="explore-perks">
     <h4>Explore Your <span style="color: #5CB25D;">Perks & Impact</span></h4>
@@ -84,13 +84,13 @@
 <!---other core features-->
 <div class="perks-container other-features">
     <a href="#"><div class="perk-container ">Favorite <span class="perks-value">Routes</span></div></a> 
-    <a href="#"><div class="perk-container">Your <span class="perks-value">Perks</span></div></a> 
+    <a href=" {{ url_for('redeem_perks') }}"><div class="perk-container">Your <span class="perks-value">Perks</span></div></a> 
     <a href="#">  <div class="perk-container">Ride<span class="perks-value"> Care</span></div> </a> 
   </div>
 
   <div style="margin-bottom: 40px;">
     <h4 style="color: #5CB25D;">About Us</h4>
-    <p style="color: #003E29; margin-top: -20px;">At Carbon Perks, we’re dedicated to making sustainable travel easy and rewarding. Our mission is to empower you to make eco-friendly choices through seamless transit options, valuable rewards, and personalized routes. Every mile you travel with us helps reduce carbon emissions, making our cities cleaner and greener. Join us on the journey to a more sustainable future—one trip at a time.</p>
+    <p style="color: #003E29; margin-top: -20px;">At Commute+, we’re dedicated to making sustainable travel easy and rewarding. Our mission is to empower you to make eco-friendly choices through seamless transit options, valuable rewards, and personalized routes. Every mile you travel with us helps reduce carbon emissions, making our cities cleaner and greener. Join us on the journey to a more sustainable future—one trip at a time.</p>
   </div>
 </div>
 

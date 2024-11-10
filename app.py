@@ -125,6 +125,9 @@ def dashboard():
 
 @app.route('/redeem',methods=['GET','POST'])
 def redeem_perks():
+    walking_perks = session.get('walking_perks', request.args.get('dashboard'))
+    transit_perks = session.get('transit_perks', request.args.get('dashboard'))
+    bike_perks = session.get('bike_perks', request.args.get('dashboard'))
     total_perks = session.get('total_perks', request.args.get('dashboard'))
     message = ""
 
@@ -145,8 +148,12 @@ def redeem_perks():
         else:
             message = "Please select a valid offer."
 
-    return render_template('redeem.html', perks=session['total_perks'], offers=offers, message=message, random_offer=random_offer)
+    return render_template('redeem.html', perks=session['total_perks'], offers=offers, message=message, random_offer=random_offer, walking_perks = walking_perks, transit_perks=transit_perks,bike_perks=bike_perks, total_perks=total_perks)
 
+@app.route('/redeem-success')
+def redeem_success():
+    perks = session.get('total_perks', request.args.get('redeem'))
+    return render_template('redeem-success.html',perks=perks)
 
 if __name__ == '__main__':
     app.run(debug=True)
