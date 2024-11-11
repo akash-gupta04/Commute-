@@ -6,9 +6,8 @@ from wtforms.validators import InputRequired, Length
 from map import get_distance,get_coordinates,get_time
 
 app = Flask(__name__, template_folder="templates", static_folder="static", static_url_path='/')
-app.config['SECRET_KEY'] = 'fsaufvuyagbubikni'
+app.config['SECRET_KEY'] = '__API_Key__'
 
-API_KEY='AIzaSyDT3TNy2KLvYHQWWpJ-IZDjFodhOfDAFeU'
 # Dummy in-memory users (for demonstration purposes)
 users_db = {}
 
