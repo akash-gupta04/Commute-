@@ -1,9 +1,9 @@
 import requests,re
 
-API_KEY = 'AIzaSyDT3TNy2KLvYHQWWpJ-IZDjFodhOfDAFeU'
+API_KEY = 'API_KEY'
 
-def get_coordinates(address):
-    url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key=AIzaSyDT3TNy2KLvYHQWWpJ-IZDjFodhOfDAFeU'
+def get_coordinates(address,API_KEY):
+    url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={API_KEY}'
     response = requests.get(url)
     data = response.json()
     
@@ -17,12 +17,12 @@ def get_coordinates(address):
         return None
 
 
-def get_time(start, end, mode='transit'):
+def get_time(start, end, mode,API_KEY):
     start_coords = get_coordinates(start)
     end_coords = get_coordinates(end)
     
     if start_coords and end_coords:
-        url = f'https://maps.googleapis.com/maps/api/directions/json?origin={start_coords[0]},{start_coords[1]}&destination={end_coords[0]},{end_coords[1]}&mode={mode}&key=AIzaSyDT3TNy2KLvYHQWWpJ-IZDjFodhOfDAFeU'
+        url = f'https://maps.googleapis.com/maps/api/directions/json?origin={start_coords[0]},{start_coords[1]}&destination={end_coords[0]},{end_coords[1]}&mode={mode}&key={API_KEY}'
         response = requests.get(url)
         data = response.json()
         # print(data)
@@ -40,13 +40,13 @@ def get_time(start, end, mode='transit'):
         return 'Error: Could not retrieve coordinates for start or end location.'
 
 # Getting distance between two addresses
-def get_distance(start, end, mode):
+def get_distance(start, end, mode,API_KEY):
 
     start_coords = get_coordinates(start)
     end_coords = get_coordinates(end)
     
     if start_coords and end_coords:
-        url = f'https://maps.googleapis.com/maps/api/directions/json?origin={start_coords[0]},{start_coords[1]}&destination={end_coords[0]},{end_coords[1]}&mode={mode}&key=AIzaSyDT3TNy2KLvYHQWWpJ-IZDjFodhOfDAFeU'
+        url = f'https://maps.googleapis.com/maps/api/directions/json?origin={start_coords[0]},{start_coords[1]}&destination={end_coords[0]},{end_coords[1]}&mode={mode}&key={API_KEY}'
         response = requests.get(url)
         data = response.json()
         # print(data)
